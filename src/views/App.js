@@ -1,10 +1,10 @@
 import './App.scss';
+import MyComponent from './example/myComponent.js';
 
 function App() {
   return (
     <div className="App">
-      <h3>Hello world</h3>
-      hihihi
+      <div><MyComponent /></div>
     </div>
   );
 }
