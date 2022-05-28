@@ -9,6 +9,9 @@ class ChildComponent extends React.Component {
       showJobs: !this.state.showJobs,
     });
   };
+  handleOnclickDelete = (job) => {
+    this.props.deleteJobs(job);
+  };
   render() {
     console.log("rendering: ", this.state);
     let { arrJobs } = this.props;
@@ -17,22 +20,26 @@ class ChildComponent extends React.Component {
       <>
         {showJobs === false && (
           <div>
-            <button>Show</button>
+            <button onClick={this.handleShowhide}>Show</button>
           </div>
         )}
-        {showJobs && (
+        {showJobs === true && (
           <>
             <div className="job-lists">
               {arrJobs.map((item, index) => {
                 return (
                   <div key={item.id}>
-                    {item.title}-{item.salary} $
+                    {item.title}-{item.salary} $ &nbsp;
+                    <span onClick={() => this.handleOnclickDelete(item)}>
+                      X
+                    </span>
                   </div>
                 );
               })}
             </div>
+
             <div>
-              <button>Hide</button>
+              <button onClick={this.handleShowhide}>Hide</button>
             </div>
           </>
         )}
