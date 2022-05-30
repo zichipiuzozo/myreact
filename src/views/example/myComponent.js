@@ -19,9 +19,9 @@ class MyComponent extends React.Component {
   deleteJobs = (job) => {
     let currentJobs = this.state.arrJobs;
     currentJobs = currentJobs.filter((item) => item.id !== job.id);
-    this.setState = {
+    this.setState({
       arrJobs: currentJobs,
-    };
+    });
   };
   render() {
     console.log("rendering: ", this.state);
