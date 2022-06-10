@@ -18,7 +18,7 @@ class AddComponent extends React.Component {
   handleOnclick = (event) => {
     event.preventDefault();
     console.log(">>>> check data render:", this.state);
-    if (this.state.title == "" || this.state.salary == "") {
+    if (this.state.title === "" || this.state.salary === "") {
       alert("Chua nhap du lieu");
       return;
     }
