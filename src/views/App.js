@@ -6,6 +6,7 @@ import "react-toastify/dist/ReactToastify.css";
 import Nav from "./Nav/Nav";
 import MyComponent from "./example/myComponent.js";
 import Home from "./example/Home";
+import ListUser from "./example/Users/ListUser";
 import {
   BrowserRouter as Router,
   Switch,
@@ -13,6 +14,7 @@ import {
   Link,
   BrowserRouter,
 } from "react-router-dom";
+import DetailUser from "./example/Users/DetailUser";
 
 function App() {
   return (
@@ -30,6 +32,12 @@ function App() {
             </Route>
             <Route path="/todo">
               <ListTodo />
+            </Route>
+            <Route path="/user" exact>
+              <ListUser />
+            </Route>
+            <Route path="/user/:id">
+              <DetailUser />
             </Route>
           </Switch>
         </header>
